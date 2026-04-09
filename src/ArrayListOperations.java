@@ -1,16 +1,31 @@
 import java.util.*;
 
-public class Main {
+public class ArrayListOperations {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        int n = Integer.parseInt(scanner.nextLine().trim());
-        String[] items = scanner.nextLine().trim().split(" ");
-        String searchItem = scanner.nextLine().trim();
+        Scanner sc = new Scanner(System.in);
 
-        ArrayList<String> cart = new ArrayList<>(Arrays.asList(items));
-        Collections.sort(cart);
+        int n = sc.nextInt();
+        ArrayList<String> list = new ArrayList<>();
 
-        System.out.println("Sorted Items: " + cart);
-        System.out.println(cart.contains(searchItem) ? "Found" : "Not Found");
+        // Read items
+        for (int i = 0; i < n; i++) {
+            list.add(sc.next());
+        }
+
+        // Sort alphabetically
+        Collections.sort(list);
+
+        // Read search item
+        String searchItem = sc.next();
+
+        // Print sorted list
+        System.out.println("Sorted Items: " + list);
+
+        // Check existence
+        if (list.contains(searchItem)) {
+            System.out.println("Found");
+        } else {
+            System.out.println("Not Found");
+        }
     }
 }
