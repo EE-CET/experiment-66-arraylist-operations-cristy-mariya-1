@@ -2,25 +2,15 @@ import java.util.*;
 
 public class ArrayListOperations {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
+        int n = Integer.parseInt(scanner.nextLine().trim());
+        String[] items = scanner.nextLine().trim().split(" ");
+        String searchItem = scanner.nextLine().trim();
 
-        int n = sc.nextInt();
-        ArrayList<String> list = new ArrayList<>();
+        ArrayList<String> cart = new ArrayList<>(Arrays.asList(items));
+        Collections.sort(cart);
 
-        for (int i = 0; i < n; i++) {
-            list.add(sc.next());
-        }
-
-        Collections.sort(list);
-
-        String searchItem = sc.next();
-        boolean found = list.contains(searchItem);
-
-        System.out.println("Sorted Items: " + list);
-        if (found) {
-            System.out.println("Found");
-        } else {
-            System.out.println("Not Found");
-        }
+        System.out.println("Sorted Items: " + cart);
+        System.out.println(cart.contains(searchItem) ? "Found" : "Not Found");
     }
 }
