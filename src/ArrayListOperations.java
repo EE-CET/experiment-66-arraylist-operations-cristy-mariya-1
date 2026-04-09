@@ -7,15 +7,19 @@ public class ArrayListOperations {
         int n = sc.nextInt();
         ArrayList<String> list = new ArrayList<>();
 
+        // Read items
         for (int i = 0; i < n; i++) {
             list.add(sc.next());
         }
 
+        // Sort alphabetically
         Collections.sort(list);
 
+        // Search item
         String searchItem = sc.next();
         boolean found = list.contains(searchItem);
 
+        // Output
         System.out.println("Sorted Items: " + list);
         if (found) {
             System.out.println("Found");
